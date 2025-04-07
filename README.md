@@ -1,12 +1,12 @@
 # Private Acquisition Research Automation
 ## Use Case
-This project automates research on small businesses for sale by scraping data from BizBuySell, extracting key details like selling price, revenue, cash flow/EBITDA, and description to aid acquisition analysis.
+This project automates small business acquisition research by scraping business-for-sale listings, using Generative AI with @tool-annotated functions to extract and analyze financial data (price, revenue, cash flow), and outputting structured JSON with insights.
 
 ## Problem
-Manually researching small business listings is time-consuming, requiring aggregation of financial and descriptive data from sites like BizBuySell.
+Manual research of business listings is slow, and Gen AI needs real data inputs to avoid fabrication, requiring tools for scraping and extraction.
 
 ## Solution
 We use:
-1. **Web Scraping**: `requests` and `beautifulsoup4` to fetch and parse BizBuySell listing pages.
-2. **Data Extraction**: Pulls key fields (price, revenue, cash flow, description) into structured JSON.
-3. **Output**: Saves results to `/kaggle/working/business_listings.json` for analysis.
+1. **Web Scraping Tool**: `@tool` to fetch listing data from BizBuySell (Class Element: Data Collection).
+2. **Gen AI Extraction Tool**: `@tool` with Gemini to parse financials from scraped text (Class Element: Gen AI Extraction).
+3. **Gen AI Analysis**: Agent analyzes extracted data, computes metrics, and generates insights (Class Element: Gen AI Application).
